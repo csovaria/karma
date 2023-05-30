@@ -1,4 +1,4 @@
-package com.codecool.backend;
+package com.harmas.karma;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
