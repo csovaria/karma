@@ -15,13 +15,13 @@ public enum CardType {
     KING(13),
     ACE(14);
 
-    private final Integer value;
+    private final int value;
 
-    CardType(Integer value) {
+ CardType(int value) {
         this.value = value;
     }
 
- public Integer getValue() {
+ public int getValue() {
   return value;
  }
 }
