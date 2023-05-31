@@ -1,15 +1,26 @@
 package com.harmas.karma.model;
 
-public class Card {
-    private final CardType type;
-    private final ColorType color;
+import java.util.UUID;
 
-    public Card(CardType type, ColorType color) {
-        this.type = type;
+public class Card {
+    private final UUID id = UUID.randomUUID();
+    private final CardValue value;
+    private final CardColor color;
+
+    public Card(CardValue value, CardColor color) {
+        this.value = value;
         this.color = color;
     }
 
     public Integer getValue() {
-        return this.type.getValue();
+        return this.value.getValue();
+    }
+
+    public CardColor getColor() {
+        return color;
+    }
+
+    public UUID getId() {
+        return id;
     }
 }

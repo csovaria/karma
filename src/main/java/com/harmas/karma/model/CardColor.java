@@ -1,8 +1,8 @@
 package com.harmas.karma.model;
 
-public enum ColorType {
+public enum CardColor {
     HEARTS,
     SPADES,
     DIAMONDS,
-    CLUBS;
+    CLUBS
 }
