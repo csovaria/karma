@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Component
 public class Game {
@@ -49,8 +50,17 @@ public class Game {
         playDeck.add(drawDeck.pop());
         for (Player player : players){
             List<Card> cards = new ArrayList<>(drawDeck.subList(0, 2));
-            drawDeck.subList(0,2).clear();
+            drawDeck.subList(0, 2).clear();
             player.pullCards(cards);
         }
     }
+
+
+    public boolean isCardCanBePlaced(Card card) {
+        Card topCard = playDeck.getFirst();
+        return card.getValue() > topCard.getValue()
+                    || card.getValue().equals(CardValue.TWO.getValue())
+                    || card.getValue().equals(CardValue.TEN.getValue());
+    }
+
 }
