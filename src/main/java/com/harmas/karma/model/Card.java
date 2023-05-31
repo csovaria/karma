@@ -1,6 +1,9 @@
 package com.harmas.karma.model;
 
+import java.util.UUID;
+
 public class Card {
+    private final UUID id = UUID.randomUUID();
     private final CardValue value;
     private final CardColor color;
 
