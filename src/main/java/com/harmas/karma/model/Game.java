@@ -63,4 +63,9 @@ public class Game {
                     || card.getValue().equals(CardValue.TEN.getValue());
     }
 
+
+    public boolean areCardsValuesEquals(List<Card> cards) {
+        return cards.stream().allMatch(card -> card.getValue().equals(cards.get(0).getValue()));
+    }
+
 }
