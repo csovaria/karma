@@ -22,6 +22,14 @@ public class Game {
         playDeck = new LinkedList<>();
         drawDeck = new LinkedList<>();
         generateDecks();
+        generatePlayers();
+        dealCards();
+    }
+
+    private void generatePlayers() {
+        for (int i = 0; i < NUMBER_OF_PLAYERS; i++){
+            players.add(new Player("Player " + i));
+        }
     }
 
 
