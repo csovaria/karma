@@ -21,8 +21,8 @@ public class Game {
 
     public void generateDecks(){
         for (int i = 0; i < NUMBER_OF_DECKS; i++) {
-            for(CardType card: CardType.values()){
-                for (ColorType type : ColorType.values()){
+            for(CardValue card: CardValue.values()){
+                for (CardColor type : CardColor.values()){
                     drawDeck.add(new Card(card, type));
                 }
             }

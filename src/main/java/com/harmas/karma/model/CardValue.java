@@ -1,6 +1,6 @@
 package com.harmas.karma.model;
 
-public enum CardType {
+public enum CardValue {
    TWO(2),
     THREE(3),
     FOUR(4),
@@ -17,7 +17,7 @@ public enum CardType {
 
     private final int value;
 
- CardType(int value) {
+ CardValue(int value) {
         this.value = value;
     }
 
