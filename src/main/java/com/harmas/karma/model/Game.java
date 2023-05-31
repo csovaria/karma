@@ -2,20 +2,24 @@ package com.harmas.karma.model;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 @Component
 public class Game {
 
     private List<Player> players;
-    private List<Card> drawDeck;
-    private List<Card> burnDeck;
-    private List<Card> playDeck;
+    private LinkedList<Card> drawDeck;
+    private LinkedList<Card> burnDeck;
+    private LinkedList<Card> playDeck;
     private static final int NUMBER_OF_DECKS = 1;
 
-    private int numberOfPlayers = 2;
+    private static final int NUMBER_OF_PLAYERS = 2;
+
     public Game() {
-        this.drawDeck = new ArrayList<>();
+        burnDeck = new LinkedList<>();
+        playDeck = new LinkedList<>();
+        drawDeck = new LinkedList<>();
         generateDecks();
     }
 
