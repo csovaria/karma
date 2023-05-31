@@ -16,4 +16,8 @@ public class Card {
     public CardColor getColor() {
         return color;
     }
+
+    public UUID getId() {
+        return id;
+    }
 }
