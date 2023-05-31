@@ -6,15 +6,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
 @Component
 public class Game {
-
     private List<Player> players;
     private LinkedList<Card> drawDeck;
     private LinkedList<Card> burnDeck;
     private LinkedList<Card> playDeck;
     private static final int NUMBER_OF_DECKS = 1;
-
     private static final int NUMBER_OF_PLAYERS = 2;
 
     public Game() {
@@ -25,6 +24,7 @@ public class Game {
         generatePlayers();
         dealCards();
     }
+
 
     private void generatePlayers() {
         for (int i = 0; i < NUMBER_OF_PLAYERS; i++){
@@ -43,6 +43,7 @@ public class Game {
         }
         Collections.shuffle(drawDeck);
     }
+
 
     private void dealCards() {
         playDeck.add(drawDeck.pop());
