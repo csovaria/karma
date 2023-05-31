@@ -68,4 +68,13 @@ public class Game {
         return cards.stream().allMatch(card -> card.getValue().equals(cards.get(0).getValue()));
     }
 
+
+    public boolean areCardsCanBePlaced(List<Card> cards) {
+        if (!areCardsValuesEquals(cards)) return false;
+        AtomicBoolean placeable = new AtomicBoolean(true);
+        cards.forEach((card) -> {
+            if (!isCardCanBePlaced(card)) placeable.set(false);
+        });
+        return placeable.get();
+    }
 }
