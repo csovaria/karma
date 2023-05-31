@@ -2,6 +2,7 @@ package com.harmas.karma.model;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Game {
         generateDecks();
     }
 
+
     public void generateDecks(){
         for (int i = 0; i < NUMBER_OF_DECKS; i++) {
             for(CardValue card: CardValue.values()){
@@ -30,6 +32,16 @@ public class Game {
                     drawDeck.add(new Card(card, type));
                 }
             }
+        }
+        Collections.shuffle(drawDeck);
+    }
+
+    private void dealCards() {
+        playDeck.add(drawDeck.pop());
+        for (Player player : players){
+            List<Card> cards = new ArrayList<>(drawDeck.subList(0, 2));
+            drawDeck.subList(0,2).clear();
+            player.pullCards(cards);
         }
     }
 }
