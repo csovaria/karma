@@ -77,4 +77,9 @@ public class Game {
         });
         return placeable.get();
     }
+
+
+    public void placeCardsOnPlayDeck(List<Card> cards) {
+        if (areCardsCanBePlaced(cards)) playDeck.addAll(cards);
+    }
 }
