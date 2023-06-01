@@ -58,7 +58,7 @@ public class Game {
 
     public boolean isCardCanBePlaced(Card card) {
         Card topCard = playDeck.getFirst();
-        return card.getValue() > topCard.getValue()
+        return card.getValue() >= topCard.getValue()
                     || card.getValue().equals(CardValue.TWO.getValue())
                     || card.getValue().equals(CardValue.TEN.getValue());
     }
