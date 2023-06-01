@@ -71,11 +71,7 @@ public class Game {
 
     public boolean areCardsCanBePlaced(List<Card> cards) {
         if (!areCardsValuesEquals(cards)) return false;
-        AtomicBoolean placeable = new AtomicBoolean(true);
-        cards.forEach((card) -> {
-            if (!isCardCanBePlaced(card)) placeable.set(false);
-        });
-        return placeable.get();
+        return isCardCanBePlaced(cards.get(0));
     }
 
 
