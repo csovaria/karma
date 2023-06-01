@@ -21,6 +21,7 @@ public class Game {
         burnDeck = new LinkedList<>();
         playDeck = new LinkedList<>();
         drawDeck = new LinkedList<>();
+        players = new ArrayList<>();
         generateDecks();
         generatePlayers();
         dealCards();
@@ -74,8 +75,15 @@ public class Game {
         return isCardCanBePlaced(cards.get(0));
     }
 
-
     public void placeCardsOnPlayDeck(List<Card> cards) {
-        if (areCardsCanBePlaced(cards)) playDeck.addAll(cards);
+        playDeck.addAll(cards);
     }
-}
+
+    public boolean playCardFromHand(List<Card> cards) {
+        if (areCardsCanBePlaced(cards)){
+            placeCardsOnPlayDeck(cards);
+            return true;
+        }
+        return false;
+    }
+    }
