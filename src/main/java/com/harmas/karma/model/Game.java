@@ -2,11 +2,9 @@ package com.harmas.karma.model;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 @Component
 public class Game {
@@ -89,6 +87,14 @@ public class Game {
         }
         return false;
     }
+
+
+    public boolean playerHasCards(List<Card> cards) {
+        List<UUID> cardIDs = cards.stream().map(Card::getId).toList();
+        return new HashSet<>(cardIDs).containsAll(currentPlayer.getCardIDs());
+    }
+
+
     public void drawPlayDeck() {
         currentPlayer.pullCards(playDeck);
         playDeck.remove();
