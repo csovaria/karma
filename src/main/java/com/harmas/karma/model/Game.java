@@ -30,16 +30,16 @@ public class Game {
 
 
     private void generatePlayers() {
-        for (int i = 0; i < NUMBER_OF_PLAYERS; i++){
+        for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
             players.add(new Player("Player " + i));
         }
     }
 
 
-    public void generateDecks(){
+    public void generateDecks() {
         for (int i = 0; i < NUMBER_OF_DECKS; i++) {
-            for(CardValue card: CardValue.values()){
-                for (CardColor type : CardColor.values()){
+            for (CardValue card : CardValue.values()) {
+                for (CardColor type : CardColor.values()) {
                     drawDeck.add(new Card(card, type));
                 }
             }
@@ -50,7 +50,7 @@ public class Game {
 
     private void dealCards() {
         playDeck.add(drawDeck.pop());
-        for (Player player : players){
+        for (Player player : players) {
             List<Card> cards = new ArrayList<>(drawDeck.subList(0, 2));
             drawDeck.subList(0, 2).clear();
             player.pullCards(cards);
@@ -61,8 +61,8 @@ public class Game {
     public boolean isCardCanBePlaced(Card card) {
         Card topCard = playDeck.getFirst();
         return card.getValue() >= topCard.getValue()
-                    || card.getValue().equals(CardValue.TWO.getValue())
-                    || card.getValue().equals(CardValue.TEN.getValue());
+                || card.getValue().equals(CardValue.TWO.getValue())
+                || card.getValue().equals(CardValue.TEN.getValue());
     }
 
 
@@ -76,12 +76,14 @@ public class Game {
         return isCardCanBePlaced(cards.get(0));
     }
 
+
     public void placeCardsOnPlayDeck(List<Card> cards) {
         playDeck.addAll(cards);
     }
 
+
     public boolean playCardFromHand(List<Card> cards) {
-        if (areCardsCanBePlaced(cards)){
+        if (areCardsCanBePlaced(cards)) {
             placeCardsOnPlayDeck(cards);
             return true;
         }
