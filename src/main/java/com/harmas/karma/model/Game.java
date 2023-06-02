@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Component
 public class Game {
     private List<Player> players;
+    private Player currentPlayer;
     private LinkedList<Card> drawDeck;
     private LinkedList<Card> burnDeck;
     private LinkedList<Card> playDeck;
@@ -86,4 +87,9 @@ public class Game {
         }
         return false;
     }
+    public void drawPlayDeck() {
+        currentPlayer.pullCards(playDeck);
+        playDeck.remove();
+        playDeck.add(drawDeck.pop());
     }
+}
