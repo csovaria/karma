@@ -27,7 +27,14 @@ public class GameService {
 //    public List<Card> getCurrentPlayerCards(){
 //        return game.getCurrentPlayer().getCards()
 //    }
-
+    public void initializeGame() {
+        deckMemory.initializeDrawDeck(generateDrawDeck());
+        deckMemory.placeCards(deckMemory.drawCards(1));
+        playerMemory.instantiatePlayers();
+        playerMemory.pullCards(deckMemory.drawCards(3));
+        playerMemory.moveToTheNextPlayer();
+        playerMemory.pullCards(deckMemory.drawCards(3));
+    }
 
 
     public LinkedList<Card> generateDrawDeck() {
