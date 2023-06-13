@@ -4,6 +4,7 @@ import com.harmas.karma.model.Card;
 import com.harmas.karma.model.Player;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface PlayerDAO {
     void savePlayers(List<Player> players);
@@ -13,4 +14,6 @@ public interface PlayerDAO {
     void moveToTheNextPlayer();
 
     void handCardsToPlayers(List<Card> cards);
+
+    Player getPlayerByID(UUID id);
 }
