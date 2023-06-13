@@ -31,4 +31,9 @@ public class PlayerMemory implements PlayerDAO {
     public void moveToTheNextPlayer() {
         currentPlayerIndex = (currentPlayerIndex + 1 <= NUMBEROFPLAYERS) ? currentPlayerIndex++ : 0;
     }
+
+    @Override
+    public void handCardsToPlayers(List<Card> cards) {
+        players.forEach(player -> player.pullCards(cards));
+    }
 }
