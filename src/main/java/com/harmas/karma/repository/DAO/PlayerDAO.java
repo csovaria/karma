@@ -11,4 +11,6 @@ public interface PlayerDAO {
     void pullCards(List<Card> cards);
 
     void moveToTheNextPlayer();
+
+    void handCardsToPlayers(List<Card> cards);
 }
