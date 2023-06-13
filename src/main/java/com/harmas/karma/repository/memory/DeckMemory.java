@@ -45,5 +45,12 @@ public class DeckMemory implements DeckDAO {
             playDeck.add(drawDeck.pop());
     }
 
+    @Override
+    public List<Card> getPlayDeck() {
+        return playDeck;
+    }
 
+    //    @Override
+//    public void dealCards(List<Card> pickCards) {
+//    }
 }
