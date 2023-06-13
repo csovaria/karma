@@ -17,6 +17,10 @@ public class Player {
         this.playerDeck = new ArrayList<>();
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     public void pullCards(List<Card> cards) {
         playerDeck.addAll(cards);
     }

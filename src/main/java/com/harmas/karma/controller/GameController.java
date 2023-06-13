@@ -19,21 +19,31 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @GetMapping("/")
-    public List<Card> sendList(){
-        List<Card> list = new ArrayList<>();
-        list.add(new Card(CardValue.EIGHT, CardColor.SPADES));
-        return list;
+//    @GetMapping("/")
+//    public List<Card> sendList(){
+//        List<Card> list = new ArrayList<>();
+//        list.add(new Card(CardValue.EIGHT, CardColor.SPADES));
+//        return list;
+//    }
+
+//    @GetMapping("/get-current-player-cards")
+//    public List<Card> getCurrentPlayerCards(){
+//        return gameService.getCurrentPlayerCards();
+//    }
+
+    @GetMapping("/initialize-game")
+    public void initializeGame(){
+        gameService.initializeGame();
     }
 
-    @PostMapping("/play-card-from-hand")
-    public void playCard(@RequestBody List<Card> cards, HttpServletResponse response){
-        System.out.println(cards.toString());
-        if (gameService.playCardFromHand(cards)){
-            response.setStatus(HttpServletResponse.SC_ACCEPTED);
-        }
-        else{
-            response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
-        }
-    }
+//    @PostMapping("/play-card-from-hand")
+//    public void playCard(@RequestBody List<Card> cards, HttpServletResponse response){
+//        System.out.println(cards.toString());
+//        if (gameService.playCardFromHand(cards)){
+//            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+//        }
+//        else{
+//            response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
+//        }
+//    }
 }
