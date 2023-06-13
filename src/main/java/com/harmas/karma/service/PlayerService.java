@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class PlayerService {
@@ -26,5 +27,10 @@ public class PlayerService {
     }
     public void handCardsToPlayers(int numberOfCards) {
         playerDAO.handCardsToPlayers(deckService.drawCards(numberOfCards));
+    }
+
+    public void drawPlayDeck(UUID playerID) {
+        playerDAO.getPlayerByID(playerID).pullCards(deckService.getPlayDeck());
+        deckService.clearAndResetPlayDeck();
     }
 }
