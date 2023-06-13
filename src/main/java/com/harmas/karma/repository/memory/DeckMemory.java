@@ -39,10 +39,11 @@ public class DeckMemory implements DeckDAO {
         playDeck.addAll(cards);
     }
 
-//    @Override
-//    public void dealCards(List<Card> pickCards) {
-//
-//    }
+    @Override
+    public void clearAndResetPlayDeck() {
+            playDeck.remove();
+            playDeck.add(drawDeck.pop());
+    }
 
 
 }
