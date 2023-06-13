@@ -15,4 +15,8 @@ public interface DeckDAO {
     void placeCards(List<Card> cards);
 
 //    void dealCards(List<Card> pickCards);
+
+     void clearAndResetPlayDeck();
+
+    List<Card> getPlayDeck();
 }
