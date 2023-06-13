@@ -1,19 +1,20 @@
 package com.harmas.karma.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.harmas.karma.util.Helper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 @Service
+@RequiredArgsConstructor
 public class GameService {
-
-    private DeckService deckService;
-    private PlayerService playerService;
+    private final Helper helper;
+    private final DeckService deckService;
+    private final PlayerService playerService;
     private static final int NUMBER_OF_PLAYERS = 2;
-    @Autowired
-    public GameService(DeckService deckService, PlayerService playerService) {
-        this.deckService = deckService;
-        this.playerService = playerService;
-    }
+//    @Autowired
+//    public GameService(DeckService deckService, PlayerService playerService) {
+//        this.deckService = deckService;
+//        this.playerService = playerService;
+//    }
 
     //    public boolean playCardFromHand(List<Card> cards) {
 //        return game.playCardFromHand(cards);
