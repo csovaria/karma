@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-
 @Service
 public class DeckService {
 
@@ -44,5 +43,9 @@ public class DeckService {
         }
         Collections.shuffle(cards);
         return cards;
+    }
+
+    public void clearAndResetPlayDeck() {
+        deckDAO.clearAndResetPlayDeck();
     }
 }
