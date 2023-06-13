@@ -1,4 +1,7 @@
-package com.harmas.karma.model;
+package com.harmas.karma.util;
+
+//TODO  BOILER PLATE, NEED TO REFACTOR THESE METHODS, LOGIC METHODS INTO HELPER CLASS.
+// Need to decide the implementation of these validation methods.
 
 import org.springframework.stereotype.Component;
 
@@ -6,8 +9,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
-@Component
-public class Game {
+// @Component
+// public class Game {
 
 //    public boolean isCardCanBePlaced(Card card) {
 //        Card topCard = playDeck.getFirst();
@@ -57,4 +60,4 @@ public class Game {
 //    public Player getCurrentPlayer() {
 //        return currentPlayer;
 //    }
-}
+//}
