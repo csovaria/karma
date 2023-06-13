@@ -15,11 +15,11 @@ public class PlayerMemory implements PlayerDAO {
     private int currentPlayerIndex = 0;
 
     private final int NUMBEROFPLAYERS = 2;
+
+
     @Override
-    public void instantiatePlayers() {
-        for (int i = 0; i < NUMBEROFPLAYERS; i++){
-            players.add(new Player("Player " + i));
-        }
+    public void savePlayers(List<Player> players) {
+        this.players = players;
     }
 
     @Override
