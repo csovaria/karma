@@ -6,6 +6,8 @@ import com.harmas.karma.repository.DAO.PlayerDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
+import java.util.function.Predicate;
 
 @Repository
 public class PlayerMemory implements PlayerDAO {
@@ -35,5 +37,10 @@ public class PlayerMemory implements PlayerDAO {
     @Override
     public void handCardsToPlayers(List<Card> cards) {
         players.forEach(player -> player.pullCards(cards));
+    }
+
+    @Override
+    public Player getPlayerByID(UUID id) {
+        return players.stream().filter(player -> player.getId().equals(id)).findAny().orElse(null);
     }
 }
