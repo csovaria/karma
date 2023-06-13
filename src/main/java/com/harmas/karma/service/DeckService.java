@@ -45,6 +45,10 @@ public class DeckService {
         return cards;
     }
 
+    public List<Card> getPlayDeck() {
+        return deckDAO.getPlayDeck();
+    }
+
     public void clearAndResetPlayDeck() {
         deckDAO.clearAndResetPlayDeck();
     }
