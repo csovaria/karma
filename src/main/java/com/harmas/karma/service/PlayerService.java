@@ -24,4 +24,7 @@ public class PlayerService {
         }
         playerDAO.savePlayers(players);
     }
+    public void handCardsToPlayers(int numberOfCards) {
+        playerDAO.handCardsToPlayers(deckService.drawCards(numberOfCards));
+    }
 }
