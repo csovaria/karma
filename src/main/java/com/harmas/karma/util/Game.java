@@ -1,6 +1,6 @@
 package com.harmas.karma.util;
 
-//TODO  BOILER PLATE, NEED TO REFACTOR THESE METHODS, LOGIC METHODS INTO HELPER CLASS.
+// TODO  BOILER PLATE, NEED TO REFACTOR THESE METHODS, LOGIC METHODS INTO HELPER CLASS.
 // Need to decide the implementation of these validation methods.
 
 import org.springframework.stereotype.Component;
