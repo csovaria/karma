@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 
 // @Component
 // public class Game {
-
 //    public boolean isCardCanBePlaced(Card card) {
 //        Card topCard = playDeck.getFirst();
 //        return card.getValue() >= topCard.getValue()
